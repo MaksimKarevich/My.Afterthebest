@@ -1,6 +1,6 @@
 module.exports = {
 
-    '@tags': ['admin', 'test'],
+    '@tags': ['test'],
     before: function (browser) {
         console.log('Setting up... browser', typeof browser)
     },
