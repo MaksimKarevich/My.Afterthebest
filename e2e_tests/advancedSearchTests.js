@@ -63,7 +63,7 @@ module.exports = {
         "Search button is present"
       )
       //Empty search
-      .click(".btn-primary:nth-child(2)") //Search button
+      .click(".btn-primary:nth-child(2)")
       .waitForElementVisible(
         ".btn.btn-danger.btn-sm",
         1000,
@@ -784,7 +784,7 @@ module.exports = {
         "30"
       )
       .waitForElementNotPresent("error-message", 1000)
-      //Checkboxes
+
       //Checkboxes(Contract)
       .click(
         ":nth-child(9) :nth-child(2) :nth-child(1) label.custom-control-label"
@@ -798,7 +798,7 @@ module.exports = {
       .click(
         ":nth-child(9) :nth-child(3) :nth-child(1) label.custom-control-label"
       )
-      //.assert.visible(':nth-child(9) :nth-child(3) :nth-child(1) label.custom-control-label')
+      //.assert.visible(":nth-child(9) :nth-child(3) :nth-child(1) label.custom-control-label:checked")
       .assert.visible(
         ":nth-child(9) :nth-child(2) :nth-child(1) label.custom-control-label:not(:checked)"
       )

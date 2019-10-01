@@ -1,6 +1,6 @@
 {
   "src_folders": ["./e2e_tests", "./tests"],
-  "page_objects_path": ["page-objects"],
+  "page_objects_path": "page-objects",
   "output_folder": "reports",
   "globals_path": "globals.js",
 
@@ -13,12 +13,18 @@
       "selenium_port": 9515,
       "selenium_host": "localhost",
       "default_path_prefix" : "",
+      "screenshots" : {
+        "enabled": true,
+        "on_failure": true,
+        "path": "./screens"
+      },
 
       "desiredCapabilities": {
         "browserName": "chrome",
         "acceptSslCerts": true,
         "chromeOptions" : {
-          "args" : ["--no-sandbox", "--disable-gpu", "--incognito"]
+          "args" : ["--no-sandbox", "--disable-gpu", "--incognito"],
+          "binary" : ""
         }
       }
     }
