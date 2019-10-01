@@ -168,6 +168,6 @@ module.exports = {
         'This message include "Address is not valid"'
       )
       .end();
-  }
+  },
 };
 
