@@ -786,15 +786,9 @@ module.exports = {
       .waitForElementNotPresent("error-message", 1000)
 
       //Checkboxes(Contract)
-      .click(
-        ":nth-child(9) :nth-child(2) :nth-child(1) label.custom-control-label"
-      )
-      .assert.elementPresent(
-        ":nth-child(9) :nth-child(2) :nth-child(1) label.custom-control-label:not(:checked)"
-      )
-      .assert.elementNotPresent(
-        "dsadadsada:nth-child(9) :nth-child(3) :nth-child(1) label.custom-control-label:checked"
-      )
+      .click(":nth-child(9) :nth-child(2) :nth-child(1) label.custom-control-label")
+      .assert.elementPresent(":nth-child(9) :nth-child(2) :nth-child(1) label.custom-control-label:not(:checked)")
+      // .assert.elementNotPresent(":nth-child(9) :nth-child(3) :nth-child(1) label.custom-control-label:checked")
       .click(
         ":nth-child(9) :nth-child(3) :nth-child(1) label.custom-control-label"
       )
