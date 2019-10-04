@@ -21,7 +21,7 @@ module.exports = {
 
     browser
       .url("https://afterthebest.com/auth/register")
-      .waitForElementVisible(".app", 2000)
+      .waitForElementVisible(".app", 5000)
       .setValue('input[placeholder="Name"]', input.nickname)
       .setValue('input[placeholder="Email"]', input.email)
       .setValue("input[placeholder=Password]", input.password)

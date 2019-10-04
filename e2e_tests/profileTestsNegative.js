@@ -6,9 +6,11 @@ module.exports = {
 
   after: function(browser) {
     console.log("Closing down... browser", typeof browser);
+    browser.end();
   },
 
   "Profile Tests Negative": function(browser) {
+    const url = "https://afterthebest.com/auth/login";
     const input = {
       username: "user@email.com",
       password: "QWE123qwe"
@@ -16,10 +18,10 @@ module.exports = {
 
     browser
       //Navigate to profile
-      .url("https://afterthebest.com/auth/login")
+      .url(url)
       .waitForElementVisible(
         ".card.p-4",
-        2000,
+        5000,
         false,
         function() {},
         "Login form is visible"
@@ -29,7 +31,7 @@ module.exports = {
       .click("button[type=submit].btn.px-4")
       .waitForElementVisible(
         ".navbar-brand-full",
-        2000,
+        5000,
         false,
         function() {},
         "Website Logo is visible"
@@ -37,7 +39,7 @@ module.exports = {
       .click(".nav-item.d-md-down-none")
       .waitForElementVisible(
         ".dropdown-menu",
-        2000,
+        5000,
         false,
         function() {},
         "Dropdown menu is displayed"
@@ -45,7 +47,7 @@ module.exports = {
       .click(".fa.fa-user")
       .waitForElementVisible(
         "#nick-name",
-        1000,
+        5000,
         false,
         function() {},
         "NickName field is displayed"
@@ -167,7 +169,6 @@ module.exports = {
         "Address is not valid",
         'This message include "Address is not valid"'
       )
-      .end();
   },
 };
 

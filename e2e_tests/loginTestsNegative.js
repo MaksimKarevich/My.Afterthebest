@@ -11,7 +11,7 @@ module.exports = {
   "Login Negative Tests": function(browser) {
     browser
       .url("https://afterthebest.com/auth/login") //open URL
-      .waitForElementVisible(".app", 2000)
+      .waitForElementVisible(".app", 5000)
       .assert.elementPresent(".col-6")
       .useXpath()
       .assert.attributeContains('//button[text()="Login"]', "class", "disabled")

@@ -27,7 +27,7 @@ module.exports = {
       .url("https://afterthebest.com/auth/login")
       .waitForElementVisible(
         ".card.p-4",
-        2000,
+        5000,
         false,
         function() {},
         "Login form is visible"
@@ -37,7 +37,7 @@ module.exports = {
       .click("button[type=submit].btn.px-4")
       .waitForElementVisible(
         ".navbar-brand-full",
-        2000,
+        5000,
         false,
         function() {},
         "Website Logo is visible"
@@ -45,7 +45,7 @@ module.exports = {
       .click("section li:nth-child(2)")
       .waitForElementVisible(
         ".btn.btn-primary",
-        2000,
+        5000,
         false,
         function() {},
         "New user button is displayed"
@@ -54,7 +54,7 @@ module.exports = {
       .click(".btn.btn-primary")
       .waitForElementVisible(
         ".btn-primary.btn-md",
-        2000,
+        5000,
         false,
         function() {},
         "Create user button is displayed"

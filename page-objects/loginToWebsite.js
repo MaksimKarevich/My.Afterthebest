@@ -17,16 +17,16 @@ module.exports = {
         },
         waitForLogin(){
             return this
-                .waitForElementVisible('@loginForm', 2000, false, function () {}, 'Login form is visible')
+                .waitForElementVisible('@loginForm', 5000, false, function () {}, 'Login form is visible')
         },
 
         waitForLogo(){
             return this
-                .waitForElementVisible('@websiteLogo', 2000, false, function () {}, 'Website Logo is visible')
+                .waitForElementVisible('@websiteLogo', 5000, false, function () {}, 'Website Logo is visible')
         },
         waitForNickname(){
             return this
-                .waitForElementVisible('@nickName', 1000, false, function () {}, 'NickName field is displayed')
+                .waitForElementVisible('@nickName', 5000, false, function () {}, 'NickName field is displayed')
         },
         inputUsername(value){
             return this

@@ -17,56 +17,31 @@ module.exports = {
     browser
       //Navigate to Advanced Search
       .url("https://afterthebest.com/auth/login")
-      .waitForElementVisible(
-        ".card.p-4",
-        2000,
-        false,
-        function() {},
-        "Login form is visible"
-      )
+      .waitForElementVisible(".card.p-4", 5000, false, function() {},
+        "Login form is visible")
       .setValue("input[placeholder=Username]", input.username)
       .setValue("input[placeholder=Password]", input.password)
       .click("button[type=submit].btn.px-4")
-      .waitForElementVisible(
-        ".navbar-brand-full",
-        3000,
-        false,
-        function() {},
-        "Website Logo is visible"
-      )
+      .waitForElementVisible(".navbar-brand-full", 5000, false, function() {},
+        "Website Logo is visible")
       .click(".nav-item:nth-child(3)")
-      .waitForElementVisible(
-        ".mb-0",
-        5000,
-        false,
-        function() {},
-        "My Filters title is visible"
-      )
-      .assert.attributeContains(
-        ".btn.btn-danger.btn-sm",
-        "class",
-        "disabled",
-        "Button is disabled"
-      )
+      .waitForElementVisible(".mb-0", 5000, false, function() {},
+        "My Filters title is visible")
+      .assert.attributeContains(".btn.btn-danger.btn-sm", "class", "disabled",
+        "Button is disabled")
       .useXpath()
-      .click('//button[@class="btn btn-primary btn-sm"]')
+      .click('//button[@class=\'btn btn-primary btn-sm\']')
       .useCss()
-      .waitForElementVisible(
-        ".modal-content",
-        5000,
-        false,
-        function() {},
-        "Advanced Search dialog window is displayed"
-      )
-      .assert.elementPresent(
-        ".btn-primary:nth-child(2)",
-        "Search button is present"
-      )
+      .waitForElementVisible(".modal-content", 5000, false, function() {},
+        "Advanced Search dialog window is displayed")
+      .assert.elementPresent(".btn-primary:nth-child(2)",
+        "Search button is present")
+
       //Empty search
       .click(".btn-primary:nth-child(2)")
       .waitForElementVisible(
         ".btn.btn-danger.btn-sm",
-        1000,
+        5000,
         false,
         function() {},
         "Button is enabled"
@@ -181,7 +156,7 @@ module.exports = {
         ".col-md-4:nth-child(1) > :nth-child(1) input[placeholder=To]",
         "30"
       )
-      .waitForElementNotPresent("error-message", 1000)
+      .waitForElementNotPresent("error-message", 5000)
       //Fill the filter(Minimum Duraction)
       .setValue("#minimum-duration", "0")
       .setValue(
@@ -287,7 +262,7 @@ module.exports = {
         ".col-md-4:nth-child(1) > :nth-child(2) input[placeholder=To]",
         "30"
       )
-      .waitForElementNotPresent("error-message", 1000)
+      .waitForElementNotPresent("error-message", 5000)
       //Fill the filter(Cost)
       .setValue("#cost", "0")
       .setValue(
@@ -393,7 +368,7 @@ module.exports = {
         ".col-md-4:nth-child(2) > :nth-child(6) input[placeholder=To]",
         "30"
       )
-      .waitForElementNotPresent("error-message", 1000)
+      .waitForElementNotPresent("error-message", 5000)
       //Fill the filter(Cycle Days)
       .setValue("#cycle-data", "0")
       .setValue(
@@ -499,7 +474,7 @@ module.exports = {
         ".col-md-4:nth-child(3) > :nth-child(3) input[placeholder=To]",
         "30"
       )
-      .waitForElementNotPresent("error-message", 1000)
+      .waitForElementNotPresent("error-message", 5000)
       //Fill the filter(Data GB)
       .setValue("#data-gb", "0")
       .setValue(
@@ -605,7 +580,7 @@ module.exports = {
         ".col-md-4:nth-child(3) > :nth-child(4) input[placeholder=To]",
         "30"
       )
-      .waitForElementNotPresent("error-message", 1000)
+      .waitForElementNotPresent("error-message", 5000)
       //Fill the filter(Min data per month)
       .setValue("#min-data-per-month", "0")
       .setValue(
@@ -711,7 +686,7 @@ module.exports = {
         ".col-md-4:nth-child(3) > :nth-child(6) input[placeholder=To]",
         "30"
       )
-      .waitForElementNotPresent("error-message", 1000)
+      .waitForElementNotPresent("error-message", 5000)
       //Fill the filter(Average data per month)
       .setValue("#average-data-per-moth", "0")
       .setValue(
@@ -737,9 +712,9 @@ module.exports = {
         ".col-md-4:nth-child(3) > :nth-child(8) input[placeholder=To]",
         "1"
       )
-      .waitForElementNotPresent("error-message", 1000)
+      .waitForElementNotPresent("error-message", 5000)
       .clearValue("#average-data-per-moth")
-      .waitForElementNotPresent("error-message", 1000)
+      .waitForElementNotPresent("error-message", 5000)
       .setValue("#average-data-per-moth", "1")
       .assert.containsText(
         ".col-md-6:nth-child(3) :nth-child(1) .error-message.w-100:nth-child(2)",
@@ -783,7 +758,7 @@ module.exports = {
         ".col-md-4:nth-child(3) > :nth-child(8) input[placeholder=To]",
         "30"
       )
-      .waitForElementNotPresent("error-message", 1000)
+      .waitForElementNotPresent("error-message", 5000)
 
       //Checkboxes(Contract)
       .click(":nth-child(9) :nth-child(2) :nth-child(1) label.custom-control-label")

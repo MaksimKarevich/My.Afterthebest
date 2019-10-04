@@ -18,7 +18,7 @@ module.exports = {
       .url("https://afterthebest.com/auth/login")
       .waitForElementVisible(
         ".card.p-4",
-        2000,
+        5000,
         false,
         function() {},
         "Login form is visible"
@@ -28,7 +28,7 @@ module.exports = {
       .click("button[type=submit].btn.px-4")
       .waitForElementVisible(
         ".navbar-brand-full",
-        3000,
+        5000,
         false,
         function() {},
         "Website Logo is visible"

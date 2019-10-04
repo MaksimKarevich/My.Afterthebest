@@ -20,7 +20,7 @@ module.exports = {
 
     browser
       .url("https://afterthebest.com/auth/register")
-      .waitForElementVisible(".app", 2000)
+      .waitForElementVisible(".app", 5000)
       //Email input boundaries
       .setValue("input[placeholder=Email]", nickname)
       .assert.attributeContains(".btn.btn-success", "class", "disabled")

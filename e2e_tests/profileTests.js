@@ -6,9 +6,11 @@ module.exports = {
 
   after: function(browser) {
     console.log("Closing down... browser", typeof browser);
+    browser.end();
   },
 
   "Profile Tests Positive": function(browser) {
+    const url = "https://afterthebest.com/auth/login";
     const timestamp = Date.now();
     const input = {
       username: "user@email.com",
@@ -17,10 +19,10 @@ module.exports = {
 
     browser
       //Navigate to profile
-      .url("https://afterthebest.com/auth/login")
+      .url(url)
       .waitForElementVisible(
         ".card.p-4",
-        2000,
+        5000,
         false,
         function() {},
         "Login form is visible"
@@ -30,7 +32,7 @@ module.exports = {
       .click("button[type=submit].btn.px-4")
       .waitForElementVisible(
         ".navbar-brand-full",
-        3000,
+        5000,
         false,
         function() {},
         "Website Logo is visible"
@@ -46,7 +48,7 @@ module.exports = {
       .click(".fa.fa-user")
       .waitForElementVisible(
         "#nick-name",
-        1000,
+        5000,
         false,
         function() {},
         "NickName field is displayed"
@@ -65,7 +67,7 @@ module.exports = {
       .click("button[type=submit].btn-primary")
       .waitForElementPresent(
         "div.mini-toastr__notification.-success",
-        2000,
+        5000,
         false,
         function() {},
         "Success tost message is displayed"
@@ -90,6 +92,5 @@ module.exports = {
         "Lorem ipsum dolor sit amet",
         "Address field is the same as we input"
       )
-      .end();
-  }
+  },
 };

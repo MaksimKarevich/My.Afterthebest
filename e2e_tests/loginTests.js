@@ -6,6 +6,7 @@ module.exports = {
 
   after: function(browser) {
     console.log("Closing down... browser", typeof browser);
+    browser.end();
   },
 
   "Login Test Positive": function(browser) {
@@ -17,7 +18,7 @@ module.exports = {
     //Positive login
     browser
       .url("https://afterthebest.com/auth/login")
-      .waitForElementVisible(".card.p-4", 1000)
+      .waitForElementVisible("input[placeholder=Username]", 5000)
       .setValue("input[placeholder=Username]", input.username)
       .setValue("input[placeholder=Password]", input.password)
       .click("button[type=submit].btn.px-4")
@@ -27,6 +28,5 @@ module.exports = {
       .waitForElementVisible(".dropdown-menu")
       .click(".fa.fa-lock")
       .assert.urlContains("/auth/login")
-      .end();
-  }
+  },
 };
