@@ -22,10 +22,10 @@ module.exports = {
       .setValue("input[placeholder=Username]", input.username)
       .setValue("input[placeholder=Password]", input.password)
       .click("button[type=submit].btn.px-4")
-      .waitForElementVisible(".navbar-brand-full")
+      .waitForElementVisible(".navbar-brand-full", 5000)
       .assert.urlContains("/dashboard")
       .click(".nav-item.d-md-down-none")
-      .waitForElementVisible(".dropdown-menu")
+      .waitForElementVisible(".dropdown-menu", 5000)
       .click(".fa.fa-lock")
       .assert.urlContains("/auth/login")
   },
