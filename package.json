@@ -26,7 +26,7 @@
     "mkpath": "1.0.0",
     "nw": "^0.41.1",
     "optimist": "^0.6.1",
-    "proxy-agent": "^3.0.0",
+    "proxy-agent": "^5.0.0",
     "require.js": "^1.0.0"
   },
   "devDependencies": {
